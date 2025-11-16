@@ -23,7 +23,13 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
+        working-directory: ./day0
         run: terraform init
 
+      - name: Terraform Validate
+        working-directory: ./day0
+        run: terraform validate
+
       - name: Terraform Plan
+        working-directory: ./day0
         run: terraform plan
